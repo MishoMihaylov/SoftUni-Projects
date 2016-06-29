@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <script  src="scripts/jquery-3.0.0.min.js"></script>
+    <script  src="scripts/library-scripts.js"></script>
+    <link  rel="stylesheet" type="text/css" href="styles/library-css.css">
+    <title>My Bookstore Library</title>
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <a href="#" id="nav-home">Home</a>
+            <a href="#" id="nav-login">Login</a>
+            <a href="#" id="nav-register">Register</a>
+            <a href="#" id="nav-books-available">Books Available</a>
+            <a href="#" id="nav-insert-book">Insert Book</a>
+            <a href="#" id="nav-logout">Logout</a>
+        </nav>
+    </header>
+    <body>
+        <main>
+            <section id="view-error" onclick="$(this).fadeOut()">Error</section>
+            <section id="view-loading">Loading...</section>
+            <section id="view-note" onclick="$(this).fadeOut()">Note</section>
+
+            <section id="view-home">
+                <h1>Welcome to my bookstore library!</h1>
+            </section>
+            <section id="view-login">
+                <form id="form-login">
+                    <h2>Please login</h2>
+                    <div>Username:</div>
+                    <div><input type="text" id="login-username" required="true"/></div>
+                    <div>Password:</div>
+                    <div><input type="password" id="login-password" required="true"/></div>
+                    <div><input type="submit" id="login-submit" value="Login"/></div>
+
+                </form>
+            </section>
+            <section id="view-register">
+                <form id="form-register">
+                    <h2>Please register</h2>
+                    <div>Username:</div>
+                    <div><input type="text" id="register-username" required="true"/></div>
+                    <div>Password:</div>
+                    <div><input type="password" id="register-password" required="true"/></div>
+                    <div><input type="submit" id="register-submit" value="Register"/></div>
+                </form>
+            </section>
+            <section id="view-books-available">
+                <div id="current-books"></div>
+            </section>
+            <section id="view-insert-book">
+                <form id="form-createBook">
+                    <h2>Please insert a book</h2>
+                    <div>Book Title:</div>
+                    <div><input type="text" id="insert-book-title" required="true"/></div>
+                    <div>Book Author:</div>
+                    <div><input type="text" id="insert-book-author" required="true"/></div>
+                    <div>Book Description:</div>
+                    <div><textarea id="insert-book-description" required="true" rows="7"></textarea></div>
+                    <div><input type="submit" id="insert-book-submit" value="Insert"/></div>
+                </form>
+            </section>
+        </main>
+    </body>
+    <footer>&copy; My Bookstore Library</footer>
+</body>
+</html>

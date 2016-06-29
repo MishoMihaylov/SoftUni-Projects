@@ -1,0 +1,68 @@
+header{
+    padding: 5px;
+}
+
+footer{
+    background: #DDD;
+    padding: 12px;
+    margin: 15px 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#menu {
+    background: #DDD;
+    padding: 12px;
+    margin: 5px 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#menu > a{
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px 5px;
+    font-size: 1.2em;
+    color:black;
+}
+
+#menu > a:hover{
+    background-color: #878571;
+    padding: 14px 5px;
+}
+
+#current-books th{
+    background: #AAA;
+    font-size: 1.2em;
+}
+
+#current-books td {
+    padding: 10px;
+    background: #DDD;
+    text-align: justify;
+}
+
+#view-books-available, #view-home, #view-insert-book, #view-login, #view-register{
+    text-align: center;
+    margin: 10px;
+}
+
+#view-note, #view-error, #view-loading{
+    text-align: center;
+    margin: 15px 100px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+#view-note{
+    background: #0aae00;
+}
+
+#view-error{
+    background: #ae3b00;
+}
+
+#view-loading{
+    background: #4794e8;
+}
