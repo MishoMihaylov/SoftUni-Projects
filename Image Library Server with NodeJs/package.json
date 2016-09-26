@@ -1,0 +1,17 @@
+{
+  "name": "myproject",
+  "engine": "6.5.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Misho",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-install": "0.6.0",
+    "gulp-htmlmin": "3.0.0",    
+    "standard": "8.1.0"
+  }
+}
