@@ -10,8 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "3.9.1",
+    "gulp-htmlmin": "3.0.0",
     "gulp-install": "0.6.0",
-    "gulp-htmlmin": "3.0.0",    
-    "standard": "8.1.0"
+    "multiparty": "4.1.2",
+    "standard": "8.1.0",
+    "util": "0.10.3",
+    "node-uuid": "1.4.7"
   }
 }

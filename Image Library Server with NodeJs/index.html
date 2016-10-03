@@ -6,9 +6,12 @@
     <link href="/content/site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <form action="" method="POST" enctype="application/x-www-form-urlencoded">
-        <input type="text" id="file-name" name="FileName" placeholder="Type Name here" />     
-        <input type="text" id="img-url" name="Url" placeholder="Type Image Url here" />
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="text" id="picture-name" name="PictureName" placeholder="Type Picture Name Here" />     
+        <input type="file" name="Picture" accept="image/*"> <br /> <br />
+        <input type="text" id="category-name" name="CategoryName" placeholder="Type Category Name Here">
+        <input type="radio" name="Accessibility" value="public"> Public Picture
+        <input type="radio" name="Accessibility" value="private"> Private Picture<br /><br />
         <input type="submit" value="Submit"/>
     </form>
     <br />

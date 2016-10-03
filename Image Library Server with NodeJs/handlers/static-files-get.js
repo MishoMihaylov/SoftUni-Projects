@@ -30,7 +30,7 @@ module.exports = (req, res, routePaths) => {
     })
   } else {
     res.writeHead(403, 'Path unavailable!')
-    res.write('User is only authorized to search within /content and /images/details folders!')
+    res.write('User is only authorized to search within /content and /images folders!')
     res.end()
     return false
   }

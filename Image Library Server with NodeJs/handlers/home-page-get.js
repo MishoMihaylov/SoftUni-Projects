@@ -1,7 +1,6 @@
 let fs = require('fs')
 
 module.exports = (req, res, routePaths, storage) => {
-  console.log(routePaths.IndexSlashPath)
   if (req.pathname === routePaths['IndexSlashPath'] ||
   req.pathname === routePaths['IndexPath'] ||
    req.pathname === routePaths['IndexHtmlPath']) {
@@ -12,7 +11,6 @@ module.exports = (req, res, routePaths, storage) => {
         res.end()
         return false
       }
-
       res.writeHead(200, {
         'Content-Type': 'text/html'
       })

@@ -5,8 +5,9 @@ let fs = require('fs')
 let favicon = require('./handlers/favicon')
 let headerHandler = require('./handlers/header-handler')
 let homePageGet = require('./handlers/home-page-get')
+let imagesPictureGet = require('./handlers/images-picture-get')
 let imagesPage = require('./handlers/images-page-get')
-let imageDetailsGet = require('./handlers/image-details-get')
+let imagesCategoryPage = require('./handlers/images-category-get')
 let staticFilesGet = require('./handlers/static-files-get')
 
 let homePagePost = require('./handlers/home-page-post')
@@ -18,6 +19,7 @@ let routePaths = []
 
 initRoutePaths(routePaths)
 initStatus(routePaths.StatusPath)
+loadStorage(storage, routePaths)
 
 http.createServer((req, res) => {
   req.pathname = pathParser(req.url)
@@ -29,8 +31,9 @@ http.createServer((req, res) => {
       favicon,
       headerHandler,
       homePageGet,
+      imagesPictureGet,
       imagesPage,
-      imageDetailsGet,
+      imagesCategoryPage,
       staticFilesGet
     ]
 
@@ -55,10 +58,26 @@ function pathParser (inputUrl) {
   return url.parse(inputUrl).pathname
 }
 
+function loadStorage (storage, routePaths) {
+
+  if(!fs.existsSync('.' + routePaths.StoragePath)){
+    let path = '.' + routePaths.GalleryPath + '/Words'
+    if (!fs.existsSync(path)) {
+      fs.mkdir(path)
+    }
+    return
+  }
+
+  let storageInformation = JSON.parse(fs.readFileSync('.' + routePaths.StoragePath))
+
+  for (let entity of storageInformation) {
+    storage.push(entity)
+  }
+}
+
 function initRoutePaths (routePaths) {
   // Image paths
   let galleryPath = '/images'
-  let imgDetailsPath = '/images/details'
   // Content path
   let contentPath = '/content'
   // Status path
@@ -67,14 +86,16 @@ function initRoutePaths (routePaths) {
   let indexSlashPath = '/'
   let indexPath = '/index'
   let indexHtmlPath = '/index.html'
+  //Storage
+  let storagePath = '/storage/database.json'
 
   routePaths.GalleryPath = galleryPath
-  routePaths.ImgDetailsPath = imgDetailsPath
   routePaths.ContentPath = contentPath
   routePaths.StatusPath = statusPath
   routePaths.IndexSlashPath = indexSlashPath
   routePaths.IndexPath = indexPath
   routePaths.IndexHtmlPath = indexHtmlPath
+  routePaths.StoragePath = storagePath
 }
 
 function initStatus (route) {
