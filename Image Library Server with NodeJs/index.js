@@ -12,7 +12,7 @@ let staticFilesGet = require('./handlers/static-files-get')
 
 let homePagePost = require('./handlers/home-page-post')
 
-let port = 5667
+let port = process.env.PORT || 5667
 
 let storage = []
 let routePaths = []
@@ -59,8 +59,7 @@ function pathParser (inputUrl) {
 }
 
 function loadStorage (storage, routePaths) {
-
-  if(!fs.existsSync('.' + routePaths.StoragePath)){
+  if (!fs.existsSync('.' + routePaths.StoragePath)) {
     let path = '.' + routePaths.GalleryPath + '/Words'
     if (!fs.existsSync(path)) {
       fs.mkdir(path)
@@ -86,7 +85,7 @@ function initRoutePaths (routePaths) {
   let indexSlashPath = '/'
   let indexPath = '/index'
   let indexHtmlPath = '/index.html'
-  //Storage
+  // Storage
   let storagePath = '/storage/database.json'
 
   routePaths.GalleryPath = galleryPath

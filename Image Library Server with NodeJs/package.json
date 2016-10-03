@@ -1,6 +1,9 @@
 {
   "name": "myproject",
-  "engine": "6.5.0",
+  "engines": {
+    "node": "6.5.x",
+    "npm": "3.10.x"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

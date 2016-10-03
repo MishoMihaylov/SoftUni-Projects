@@ -17,7 +17,7 @@ module.exports = (req, res, routePaths, storage) => {
         res.write('<div style="float: left">')
         res.write('<a  href="' + routePaths.GalleryPath + '/' + folder + '">')
         res.write('<img alt="' + folder + '" src="' + routePaths.ContentPath + '/' + 'folder.jpg' + '" width="100" height="100">')
-        res.write('<div style="text-align: center">'+ folder +'</div>')
+        res.write('<div style="text-align: center">' + folder + '</div>')
         res.write('</a>')
         res.write('</div>')
       }
