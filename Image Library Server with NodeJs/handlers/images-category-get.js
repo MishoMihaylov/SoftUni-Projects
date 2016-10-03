@@ -24,7 +24,9 @@ module.exports = (req, res, routePaths, storage) => {
     }
 
     if (categoryImages.length === 0) {
-      res.writeHead(200)
+      res.writeHead(200, {
+        'Content-Type': 'text/html'
+      })
       res.write('<span>No pictures in this category.</span>')
       res.write('<br>')
       res.write('<a style="clear: both; float: left; margin: 15px 15px 15px 15px;" href="' + routePaths.GalleryPath + '"><button>Back to Gallery</button></a>')
