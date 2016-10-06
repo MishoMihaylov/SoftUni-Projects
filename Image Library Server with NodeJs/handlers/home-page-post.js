@@ -38,7 +38,7 @@ module.exports = (req, res, routePaths, storage) => {
 
     // let fileName = picture.originalFilename
     let fileName = url
-    let writeStream = fs.createWriteStream(path + ' /' + fileName)
+    let writeStream = fs.createWriteStream(path + '/' + fileName)
 
     readStream.pipe(writeStream)
     let fileFullPath = path + '/' + fileName

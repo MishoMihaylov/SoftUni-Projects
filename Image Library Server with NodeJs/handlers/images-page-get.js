@@ -27,7 +27,7 @@ module.exports = (req, res, routePaths, storage) => {
     res.write('<br>')
     res.write('<br>')
     res.write('<br>')
-    res.write('<a style="clear: both; float: left; margin: 15px 15px 15px 15px;" href="' + routePaths['IndexSlashPath'] + '"><button>Back to Input Form</button></a>')
+    res.write('<a style="clear: both; float: left; margin: 15px 15px 15px 15px;" href="' + '.' + routePaths['IndexSlashPath'] + '"><button>Back to Input Form</button></a>')
     res.end()
     return false
   } else {
