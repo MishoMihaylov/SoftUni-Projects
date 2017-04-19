@@ -1,6 +1,8 @@
 ﻿namespace Homemade.Models.EntityModels
 {
-    public class Product
+    using Contracts;
+
+    public class Product : IProduct
     {
         public int Id { get; set; }
 

@@ -1,9 +1,9 @@
 ﻿namespace Homemade.Models.EntityModels
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     public class HomemadeUser : IdentityUser
     {
@@ -17,6 +17,6 @@
 
         public Address Address { get; set; }
 
-
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }
