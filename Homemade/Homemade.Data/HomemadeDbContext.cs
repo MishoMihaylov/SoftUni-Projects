@@ -24,6 +24,6 @@
 
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
 
-        public DbSet<HomemadeUserAddress> UserAddresses { get; set; }
+        public DbSet<Address> UserAddresses { get; set; }
     }
 }

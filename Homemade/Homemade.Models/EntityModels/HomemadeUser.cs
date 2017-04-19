@@ -15,6 +15,8 @@
             return userIdentity;
         }
 
-        public HomemadeUserAddress Address { get; set; }
+        public Address Address { get; set; }
+
+
     }
 }
