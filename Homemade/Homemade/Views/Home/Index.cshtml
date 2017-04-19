@@ -1,0 +1,18 @@
+﻿@using Homemade.Extensions.Helpers;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to Homemade!</h1>
+    <br />
+    <p class="lead">Real food from local producers!</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Напазарувайте &raquo;</a></p>
+</div>
+
+<div class="row">
+    @Html.Product("", "", "", 0.00m, "", "")
+    @Html.Product("", "", "", 0.00m, "", "")
+    @Html.Product("", "", "", 0.00m, "", "")
+</div>
