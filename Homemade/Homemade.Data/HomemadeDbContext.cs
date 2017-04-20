@@ -1,7 +1,7 @@
 ﻿namespace Homemade.Data
 {
     using System.Data.Entity;
-    using Models.EntityModels;
+    using Homemade.Models.EntityModels;
     using Microsoft.AspNet.Identity.EntityFramework;
 
     public class HomemadeDbContext : IdentityDbContext<HomemadeUser>

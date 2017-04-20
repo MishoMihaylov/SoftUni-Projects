@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="HomemadeDbContext.cs" />
     <Compile Include="Contracts\IRepository.cs" />
+    <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

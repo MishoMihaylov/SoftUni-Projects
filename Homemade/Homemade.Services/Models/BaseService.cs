@@ -1,17 +1,23 @@
 ﻿namespace Homemade.Services.Models
 {
-    using Homemade.Data;
+    using Data.Models;
+    using Data.Contracts;
 
-    public abstract class BaseService
+    public abstract class BaseService<T> where T: class
     {
-        //TODO: Use interface
-        private HomemadeDbContext _dbContext = new HomemadeDbContext();
+        private IRepository<T> _repository; 
 
-        public BaseService(HomemadeDbContext dbContext)
+        public BaseService(IRepository<T> repository = null)
         {
-            this._dbContext = dbContext ?? new HomemadeDbContext();
+            this._repository = repository ?? new Repository<T>();
         }
 
-        protected HomemadeDbContext DbContext { get; set; }
+        protected IRepository<T> Repository
+        {
+            get
+            {
+                return this._repository;
+            }
+        }
     }
 }

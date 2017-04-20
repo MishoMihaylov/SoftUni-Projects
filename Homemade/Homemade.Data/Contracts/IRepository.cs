@@ -1,19 +1,18 @@
 ﻿namespace Homemade.Data.Contracts
 {
-    public interface IRepository
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+    public interface IRepository<T> where T: class
     {
-        void AddArticle();
+        void AddOrUpdate(T newEntity);
 
-        bool DeleteArticle();
+        bool Contains(T entity);
 
-        bool ContainsArticle();
+        T FindBy(T entity);
 
-        void EditArticle();
+        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
 
-        Article GetArticleById();
-
-        Category GetAllByCategory();
-
-        Subcategory GetAllBySubcategory();
+        void Delete(T entity);
     }
 }

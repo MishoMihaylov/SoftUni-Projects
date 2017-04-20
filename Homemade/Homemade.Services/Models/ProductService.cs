@@ -2,12 +2,13 @@
 {
     using System;
     using Contracts;
+    using Data.Contracts;
     using Homemade.Models.EntityModels;
     using Homemade.Models.EntityModels.Contracts;
 
-    public class ProductService : BaseService, IProductService
+    public class ProductService : BaseService<Product>, IProductService
     {
-        public ProductService() : base(new Data.HomemadeDbContext())
+        public ProductService(IRepository<Product> repository = null) : base(repository)
         {
         }
 
