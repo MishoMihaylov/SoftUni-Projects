@@ -8,7 +8,9 @@
 
         public string Name { get; set; }
 
-        public string Manufacturer { get; set; }
+        public Category Category { get; set; }
+
+        public string Producer { get; set; }
 
         public decimal Price { get; set; }
 

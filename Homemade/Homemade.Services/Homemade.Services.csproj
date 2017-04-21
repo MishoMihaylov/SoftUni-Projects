@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="Contracts\ICategoryService.cs" />
+    <Compile Include="Contracts\IProductsService.cs" />
     <Compile Include="Models\BaseService.cs" />
-    <Compile Include="Models\ProductService.cs" />
+    <Compile Include="Models\CategoryService.cs" />
+    <Compile Include="Models\ProductsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IHomemadeDbContext.cs" />
     <Compile Include="HomemadeDbContext.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Models\Repository.cs" />

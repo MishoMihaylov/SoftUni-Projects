@@ -3,8 +3,11 @@
     using System.Data.Entity;
     using Homemade.Models.EntityModels;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Contracts;
 
-    public class HomemadeDbContext : IdentityDbContext<HomemadeUser>
+    //TODO: Check if these interfaces can couse any problem
+
+    public class HomemadeDbContext : IdentityDbContext<HomemadeUser>, IHomemadeDbContext
     {
         public HomemadeDbContext()
             : base("name=HomemadeDbContext")
@@ -16,14 +19,12 @@
             return new HomemadeDbContext();
         }
 
-        public DbSet<Product> Products { get; set; }
+        public IDbSet<Product> Products { get; set; }
 
-        public DbSet<Category> Categories { get; set; }
+        public IDbSet<Category> Categories { get; set; }
 
-        public DbSet<Subcategory> Subcategory { get; set; }
+        public IDbSet<ShoppingCart> ShoppingCarts { get; set; }
 
-        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
-
-        public DbSet<Address> UserAddresses { get; set; }
+        public IDbSet<Address> UserAddresses { get; set; }
     }
 }

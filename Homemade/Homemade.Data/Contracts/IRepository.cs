@@ -9,9 +9,13 @@
 
         bool Contains(T entity);
 
-        T FindBy(T entity);
+        IQueryable<T> GetAll();
 
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
+
+        T FindById(int id);
+
+        void Delete(int id);
 
         void Delete(T entity);
     }

@@ -6,7 +6,7 @@
 
         string Name { get; set; }
 
-        string Manufacturer { get; set; }
+        string Producer { get; set; }
 
         decimal Price { get; set; }
 
