@@ -1,6 +1,7 @@
 ﻿namespace Homemade.Controllers
 {
     using System.Web.Mvc;
+    using Homemade.Services.Models;
 
     public class MyProductsController : Controller
     {
@@ -11,6 +12,9 @@
 
         public ActionResult MyProducts()
         {
+            ProductsService service = new ProductsService();
+            Console.WriteLine();
+
             return View();
         }
 

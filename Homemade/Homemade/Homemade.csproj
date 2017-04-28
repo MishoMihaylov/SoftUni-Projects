@@ -201,6 +201,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Fakes Include="Fakes\Antlr3.Runtime.fakes" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -263,10 +264,21 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Homemade.Data\Homemade.Data.csproj">
+      <Project>{1242fd3c-c121-4b43-bf79-1758aedc1702}</Project>
+      <Name>Homemade.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Homemade.Models\Homemade.Models.csproj">
       <Project>{16c65953-4fcf-49bc-bcb0-c636b630ce5d}</Project>
       <Name>Homemade.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Homemade.Services\Homemade.Services.csproj">
+      <Project>{e9d736ee-101a-4787-aba7-73015a028722}</Project>
+      <Name>Homemade.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

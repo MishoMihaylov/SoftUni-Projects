@@ -39,7 +39,7 @@
         public ICollection<Product> GetByCategory(string category)
         {
 
-            ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Category == category).ToList();
+            ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Category.Name == category).ToList();
 
             return matchedProducts;
         }
