@@ -1,5 +1,6 @@
 ﻿namespace Homemade.Run.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
     using System.Collections.Generic;
     using Homemade.Models.EntityModels;
@@ -26,9 +27,23 @@
         {
             CategoryService categoryService = new CategoryService();
 
+            if (categoryService.GetById(categoryId) == null)
+            {
+                return View();
+            }
+
             ICollection<Product> matchedProducts = categoryService.GetById(categoryId).Products;
 
             return View(matchedProducts);
+        }
+
+        public ActionResult GetCategories()
+        {
+            CategoryService categoryService = new CategoryService();
+
+            List<Category> categories = categoryService.GetAll().ToList();
+
+            return PartialView("ProductsSubmenuPartial", categories);
         }
     }
 }

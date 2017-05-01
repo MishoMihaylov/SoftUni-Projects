@@ -6,7 +6,7 @@ namespace Homemade.Services.Models
     {
         public HomemadeUser GetUserById(string id)
         {
-            return this.Repository.FindById(id);
+            return (HomemadeUser)this.Repository.FindBy(user => user.Id == id);
         }
     }
 }

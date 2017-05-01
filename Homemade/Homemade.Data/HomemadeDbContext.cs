@@ -10,7 +10,7 @@
     public class HomemadeDbContext : IdentityDbContext<HomemadeUser>, IHomemadeDbContext
     {
         public HomemadeDbContext()
-            : base("name=HomemadeDbContext")
+            : base("HomemadeDb")
         {
         }
 

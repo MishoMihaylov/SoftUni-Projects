@@ -14,7 +14,8 @@
         [Key, Column(Order = 0)]
         public int Id { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Required]
+        [Index(IsUnique = true)]
         public HomemadeUser Owner { get; set; }
 
         public ICollection<CartProduct> Items { get; set; }

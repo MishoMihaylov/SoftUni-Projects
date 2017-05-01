@@ -9,7 +9,6 @@
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<HomemadeUser> manager)
         {
-
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
 
             return userIdentity;
