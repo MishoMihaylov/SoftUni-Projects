@@ -9,6 +9,13 @@
             return View();
         }
 
+        [Route("/About")]
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        [Route("/Contact")]
         public ActionResult Contact()
         {
             return View();

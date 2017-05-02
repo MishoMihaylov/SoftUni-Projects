@@ -6,15 +6,14 @@
     {
         public int Id { get; set; }
 
-        [Display(Name = "Product Name")]
-        [Required(ErrorMessage = "Product name is required")]
+        [Required]
         [StringLength(80, MinimumLength = 2, ErrorMessage = "Invalid product name. Name must be between 2 and 80 symbols")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Category is required")]
+        [Required]
         public Category Category { get; set; }
 
-        [Required(ErrorMessage = "Producer is required")]
+        [Required]
         public string Producer { get; set; }
 
         [Range(0, 50000, ErrorMessage = "Price cannot be negative or more than 50000")]

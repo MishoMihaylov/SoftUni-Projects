@@ -13,6 +13,29 @@
         {
             return View();
         }
+
+        public ActionResult AddItem()
+        {
+            CategoryService categoryService = new CategoryService();
+            List<Category> categories = categoryService.GetAll().ToList();
+
+            List<SelectListItem> categoriesListItems = new List<SelectListItem>();
+
+            foreach (var category in categories)
+            {
+                SelectListItem item = new SelectListItem()
+                {
+                    Text = category.Name,
+                    Value = category.Id.ToString()
+                };
+
+                categoriesListItems.Add(item);
+            }
+
+            ViewBag.Categories = categoriesListItems;
+
+            return View();
+        }
         
         public ActionResult Details(int categoryId)
         {
