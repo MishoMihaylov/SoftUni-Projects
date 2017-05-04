@@ -1,12 +1,13 @@
-﻿using Homemade.Models.EntityModels;
-
-namespace Homemade.Services.Models
+﻿namespace Homemade.Services.Models
 {
+    using System.Linq;
+    using Homemade.Models.EntityModels;
+
     public class UserService : BaseService<HomemadeUser>
     {
         public HomemadeUser GetUserById(string id)
         {
-            return (HomemadeUser)this.Repository.FindBy(user => user.Id == id);
+            return this.Repository.FindBy(user => user.Id == id).Single();
         }
     }
 }

@@ -20,6 +20,6 @@
         [StringLength(80, MinimumLength = 2, ErrorMessage = "Invalid category name. Name must be between 2 and 80 symbols")]
         public string Name { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

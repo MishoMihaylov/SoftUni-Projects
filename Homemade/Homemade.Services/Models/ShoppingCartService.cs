@@ -12,7 +12,7 @@
 
         public ShoppingCart GetByUser(string username)
         {
-            return (ShoppingCart)this.Repository.FindBy(sc => sc.Owner.UserName == username);
+            return this.Repository.FindBy(sc => sc.Owner.UserName == username).Single();
         }
 
         public void AddProduct(ShoppingCart shoppingCart, CartProduct product)

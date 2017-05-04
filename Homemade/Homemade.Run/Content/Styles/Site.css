@@ -76,5 +76,24 @@ body {
 }
 
 nav div ul li a {
-    color: #f44336 ;
+    color: #f44336;
+}
+
+#header {
+    background-color: #fbc02d;
+}
+
+#header2 {
+    background-color: #4caf50;
+}
+
+.glyphicon {
+    font-size: 30px;
+    padding-top: 7px;
+    color: #fafafa;
+}
+
+.register {
+    font-size: 30px;
+    color: #fafafa;
 }

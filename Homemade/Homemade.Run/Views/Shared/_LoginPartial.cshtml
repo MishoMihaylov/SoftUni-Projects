@@ -9,8 +9,13 @@
         <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        <li>@Html.ActionLink("Shopping Cart", "ShoppingCart", "Index")</li>
-
+        @if (User.IsInRole("Admin"))
+        {
+            <li>@Html.ActionLink("Admin Panel", "Index", "AdminPanel")</li>
+        }
+        <li>
+            <a href="@Url.Action("Index", "ShoppingCart", routeValues: null)" class="btn btn-success btn-default"><span class="glyphicon glyphicon-shopping-cart "></span> Shopping Cart</a>
+        </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
@@ -19,9 +24,17 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Shopping Cart", "ShoppingCart", "Index")</li>
-        <li><a href="@Url.Action("Login", "Account", new { id = "registerLink" })"><span class="icon-btn icon-btn-user left"></span>Log In</a></li>
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>
+            <a href="@Url.Action("Login", "Account", routeValues: null)" class="btn btn-success btn-default">Login</a>
+        </li>
+        <li>
+            <a href="@Url.Action("Register", "Account", routeValues: null)" class="btn btn-success btn-default">Register</a>
+        </li>
+        
+        <li>@*<a href="@Url.Action("Login", "Account", new { id = "registerLink" })"><span class="icon-btn icon-btn-user left"></span>Log In</a>*@</li>
+        <li>@*@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@</li>
+        @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
     </ul>
 }
+
+

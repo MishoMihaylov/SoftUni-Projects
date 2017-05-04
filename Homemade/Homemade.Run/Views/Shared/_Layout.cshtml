@@ -18,11 +18,11 @@
                     <span class="icon-bar"></span>
                 </button>
                 @*@Html.ActionLink("Homemade", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <div><a class="navbar-brand" href=""><img src="@Url.Content("~/Content/Images/HomemadeLogo.jpg")" class="logo"></a></div>
+                <div><a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/Images/HomemadeLogo.jpg")" class="logo"></a></div>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse menu" id="myNavbar"">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Products", "Contact Us", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("About Homemade", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 </ul>

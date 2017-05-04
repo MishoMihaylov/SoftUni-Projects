@@ -1,5 +1,6 @@
 ﻿namespace Homemade.Run.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
     using System.Collections.Generic;
@@ -12,19 +13,19 @@
         private CategoryService _categoryService = new CategoryService();
         private ProductsService _productsService = new ProductsService();
 
-        public ActionResult Index()
+        public ActionResult Index(int categoryId = -1)
         {
-            List<Product> allProducts = this._productsService.GetAll().OrderBy(product => product.Date).ToList();
+            List<Product> allProducts = new List<Product>();
+            if (categoryId == -1)
+            {
+                allProducts = this._productsService.GetAll().OrderBy(product => product.Date).ToList();
+            }
+            else
+            {
+                allProducts = this._productsService.GetByCategoryId(categoryId).OrderBy(product => product.Date).ToList();
+            }
 
             return View(allProducts);
-        }
-
-        [Authorize]
-        public ActionResult MyProducts()
-        {
-            List<Product> myProducts = _productsService.GetByManufacturer(User.Identity.Name).ToList();
-
-            return View(myProducts);
         }
 
         [Authorize]
@@ -54,11 +55,14 @@
         [Authorize]
         public ActionResult AddProduct(ProductBM product)
         {
-            //Product product = AutoMapper.Mapper.Map<Product>(); 
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
 
-            //Replace with mapped product
             Product newProduct = new Product();
-            newProduct.Producer = User.Identity.Name;
+            newProduct = AutoMapper.Mapper.Map<ProductBM, Product>(product);
+            newProduct.Date = DateTime.Now;
 
             this._productsService.AddOrUpdate(newProduct);
 
@@ -72,17 +76,11 @@
             return View(product);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
-        public ActionResult Remove(int productId)
+        public void Remove(int productId)
         {
-            if(_productsService.GetById(productId).Producer != User.Identity.Name)
-            {
-                return View();
-            }
-
             _productsService.Remove(productId);
-            return View();
         }
 
         public ActionResult ByCategory(int categoryId)

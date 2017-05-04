@@ -13,8 +13,6 @@
 
         ICollection<Product> GetByName(string name);
 
-        ICollection<Product> GetByManufacturer(string manufacturerName);
-
         ICollection<Product> GetFromPrice(decimal fromPrice);
 
         ICollection<Product> GetToPrice(decimal toPrice);

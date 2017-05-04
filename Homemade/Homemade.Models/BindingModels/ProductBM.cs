@@ -18,6 +18,6 @@
         [Range(0, 10000, ErrorMessage = "Quantity cannot be negative or more than 10000")]
         public int Quantity { get; set; }
 
-        public byte[] Image { get; set; }
+        //public byte[] Image { get; set; }
     }
 }

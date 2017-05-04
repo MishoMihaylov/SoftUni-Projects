@@ -11,11 +11,10 @@
         [StringLength(80, MinimumLength = 2, ErrorMessage = "Invalid product name. Name must be between 2 and 80 symbols")]
         public string Name { get; set; }
 
-        [Required]
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
-        public string Producer { get; set; }
+        public Category Category { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -25,6 +24,6 @@
         [Range(0, 10000, ErrorMessage = "Quantity cannot be negative or more than 10000")]
         public int Quantity { get; set; }
 
-        public string ImagePath { get; set; }
+        //public string ImagePath { get; set; }
     }
 }

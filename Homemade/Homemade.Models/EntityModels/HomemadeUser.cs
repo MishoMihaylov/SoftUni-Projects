@@ -14,8 +14,6 @@
             return userIdentity;
         }
 
-        public Address Address { get; set; }
-
         public ShoppingCart ShoppingCart { get; set; }
     }
 }

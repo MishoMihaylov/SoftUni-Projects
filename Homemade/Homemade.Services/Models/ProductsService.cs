@@ -43,9 +43,9 @@
             return matchedProducts;
         }
 
-        public ICollection<Product> GetByManufacturer(string manufacturerName)
+        public ICollection<Product> GetByCategoryId(int categoryId)
         {
-            ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Producer == manufacturerName).ToList();
+            ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Category.Id == categoryId).ToList();
 
             return matchedProducts;
         }

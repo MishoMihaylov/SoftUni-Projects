@@ -14,7 +14,9 @@
         public DateTime Date { get; set; }
 
         public bool Confirmed { get; set; }
+
+        public string ShippingAddress { get; set; }
         
-        public ICollection<Product> OrderedProducts { get; set; }
+        public virtual ICollection<Product> OrderedProducts { get; set; }
     }
 }

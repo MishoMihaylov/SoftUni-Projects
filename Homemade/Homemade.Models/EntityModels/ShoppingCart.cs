@@ -18,6 +18,6 @@
         [Index(IsUnique = true)]
         public HomemadeUser Owner { get; set; }
 
-        public ICollection<CartProduct> Items { get; set; }
+        public virtual ICollection<CartProduct> Items { get; set; }
     }
 }
