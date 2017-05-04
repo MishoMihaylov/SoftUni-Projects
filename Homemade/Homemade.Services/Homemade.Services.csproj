@@ -61,6 +61,7 @@
     <Compile Include="Contracts\IProductsService.cs" />
     <Compile Include="Models\BaseService.cs" />
     <Compile Include="Models\CategoryService.cs" />
+    <Compile Include="Models\OrdersService.cs" />
     <Compile Include="Models\ProductsService.cs" />
     <Compile Include="Models\ShoppingCartService.cs" />
     <Compile Include="Models\UserService.cs" />

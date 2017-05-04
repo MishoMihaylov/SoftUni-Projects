@@ -1,5 +1,6 @@
 ﻿namespace Homemade.Models.EntityModels
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     public class Product
@@ -15,6 +16,8 @@
 
         [Required]
         public string Producer { get; set; }
+
+        public DateTime Date { get; set; }
 
         [Range(0, 50000, ErrorMessage = "Price cannot be negative or more than 50000")]
         public decimal Price { get; set; }

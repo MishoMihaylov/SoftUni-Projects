@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BindingModels\ProductBM.cs" />
     <Compile Include="EntityModels\CartProduct.cs" />
+    <Compile Include="EntityModels\Order.cs" />
     <Compile Include="EntityModels\Product.cs" />
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\ShoppingCart.cs" />

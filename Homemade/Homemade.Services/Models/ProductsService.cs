@@ -38,7 +38,6 @@
 
         public ICollection<Product> GetByCategory(string category)
         {
-
             ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Category.Name == category).ToList();
 
             return matchedProducts;
@@ -68,6 +67,13 @@
         public ICollection<Product> GetByPriceRange(decimal fromPrice, decimal toPrice)
         {
             ICollection<Product> matchedProducts = this.Repository.FindBy(p => p.Price >= fromPrice && p.Price <= toPrice).ToList();
+
+            return matchedProducts;
+        }
+
+        public ICollection<Product> GetAll()
+        {
+            ICollection<Product> matchedProducts = this.Repository.GetAll().ToList();
 
             return matchedProducts;
         }

@@ -22,3 +22,59 @@ select,
 textarea {
     max-width: 280px;
 }
+
+body {
+    margin:0px;
+    padding: 0px;
+}
+
+.navbar {
+    padding-top: 10px;
+    margin-bottom: 0;
+    background-color: #fdfefe;
+    z-index: 9999;
+    border: 0;
+    font-size: 15px ;
+    line-height: 3 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.one li a {
+    color: #bcaaa4 !important;
+}
+
+.mybottom li a {
+    color: #ff8f00 !important;
+    font-size: 17px;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #7cb342 !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.navbar-brand >img {
+    width:55%;
+    margin-right: 0px;
+}
+
+.btn, btn-default {
+    margin-right: 18px;
+}
+
+#mynavbar {
+    max-height: 300px;
+}
+
+.menu div ul li {
+    padding-top: 10px;
+}
+
+nav div ul li a {
+    color: #f44336 ;
+}
