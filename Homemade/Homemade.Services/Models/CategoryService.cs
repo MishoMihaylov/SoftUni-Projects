@@ -24,7 +24,6 @@
             return category;
         }
 
-        //Make sure name is unique!!!
         public Category GetByName(string name)
         {
             Category category = this.Repository.FindBy(c => c.Name == name).Single();

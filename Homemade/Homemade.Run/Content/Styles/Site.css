@@ -23,7 +23,7 @@ textarea {
     max-width: 280px;
 }
 
-body {
+/*body {
     margin:0px;
     padding: 0px;
 }
@@ -32,7 +32,6 @@ body {
     padding-top: 10px;
     margin-bottom: 0;
     background-color: #fdfefe;
-    z-index: 9999;
     border: 0;
     font-size: 15px ;
     line-height: 3 !important;
@@ -59,16 +58,12 @@ body {
 }
 
 .navbar-brand >img {
-    width:55%;
+    width:65%;
     margin-right: 0px;
 }
 
 .btn, btn-default {
     margin-right: 18px;
-}
-
-#mynavbar {
-    max-height: 300px;
 }
 
 .menu div ul li {
@@ -96,4 +91,4 @@ nav div ul li a {
 .register {
     font-size: 30px;
     color: #fafafa;
-}
+}*/

@@ -3,12 +3,11 @@
     using System.Linq;
     using System.Web.Mvc;
     using System.Collections.Generic;
-    using Microsoft.AspNet.Identity;
     using Data.Models;
     using Services.Models;
     using Homemade.Models.EntityModels;
+    using Homemade.Models.BindingModels;
 
-    [Authorize]
     public class ShoppingCartController : Controller
     {
         private ShoppingCartService _shoppingCartService = new ShoppingCartService();
@@ -16,18 +15,23 @@
 
         public ActionResult Index()
         {
-            Repository<HomemadeUser> userRepo = new Repository<HomemadeUser>();
-            UserService userService = new UserService();
-            ShoppingCartService cartService = new ShoppingCartService();
+            //Repository<HomemadeUser> userRepo = new Repository<HomemadeUser>();
+            //UserService userService = new UserService();
+            //ShoppingCartService cartService = new ShoppingCartService();
 
-            string currentUsername = User.Identity.GetUserName();
+            //string currentUsername = User.Identity.GetUserName();
             
-            ShoppingCart cart = cartService.GetByUser(currentUsername);
+            //ShoppingCart cart = cartService.GetByUser(currentUsername);
 
-            return View(cart);
+            return View();
         }
 
         public ActionResult Order()
+        {
+            return View();
+        }
+
+        public ActionResult Order(AddressBM address)
         {
             return View();
         }
@@ -43,7 +47,7 @@
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult ConfirmOrders()
         {
             Repository<Order> repo = new Repository<Order>();
@@ -56,26 +60,26 @@
         [HttpPost]
         public void AddToCart(int productId)
         {
-            string currentUsername = User.Identity.Name;
+            //string currentUsername = User.Identity.Name;
 
-            ShoppingCart shoppingCart = this._shoppingCartService.GetByUser(currentUsername);
-            CartProduct existingItem = shoppingCart.Items.Where(sc => sc.Product.Id == productId).FirstOrDefault();
+            //ShoppingCart shoppingCart = this._shoppingCartService.GetByUser(currentUsername);
+            //CartProduct existingItem = shoppingCart.Items.Where(sc => sc.Product.Id == productId).FirstOrDefault();
 
-            if (existingItem != null)
-            {
-                existingItem.Count++;
-            }
-            else
-            {
-                existingItem = new CartProduct();
-                Product product = this._productService.GetById(productId);
+            //if (existingItem != null)
+            //{
+            //    existingItem.Count++;
+            //}
+            //else
+            //{
+            //    existingItem = new CartProduct();
+            //    Product product = this._productService.GetById(productId);
 
-                existingItem.Count = 1;
-                existingItem.Product = product;
-                existingItem.Cart = shoppingCart;
+            //    existingItem.Count = 1;
+            //    existingItem.Product = product;
+            //    existingItem.Cart = shoppingCart;
 
-                shoppingCart.Items.Add(existingItem);
-            }
+            //    shoppingCart.Items.Add(existingItem);
+            //}
         }
     }
 }

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\AddressBM.cs" />
     <Compile Include="BindingModels\ProductBM.cs" />
     <Compile Include="EntityModels\CartProduct.cs" />
     <Compile Include="EntityModels\Order.cs" />

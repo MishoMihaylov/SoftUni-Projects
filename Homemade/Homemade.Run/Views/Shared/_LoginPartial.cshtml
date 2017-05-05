@@ -19,22 +19,13 @@
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
-    
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            <a href="@Url.Action("Login", "Account", routeValues: null)" class="btn btn-success btn-default">Login</a>
-        </li>
-        <li>
-            <a href="@Url.Action("Register", "Account", routeValues: null)" class="btn btn-success btn-default">Register</a>
-        </li>
-        
-        <li>@*<a href="@Url.Action("Login", "Account", new { id = "registerLink" })"><span class="icon-btn icon-btn-user left"></span>Log In</a>*@</li>
-        <li>@*@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@</li>
-        @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+        <li>@Html.ActionLink("Admin Panel", "Index", "AdminPanel")</li>
+        <li>@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "navbar-brand" })</li>
     </ul>
 }
-
-

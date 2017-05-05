@@ -9,27 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @*@Html.ActionLink("Homemade", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <div><a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/Images/HomemadeLogo.jpg")" class="logo"></a></div>
-            </div>
-            <div class="navbar-collapse collapse menu" id="myNavbar"">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    <li>@Html.ActionLink("About Homemade", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+    @Html.Partial("_Navigation")
     <div class="container body-content">
         @RenderBody()
         <hr />

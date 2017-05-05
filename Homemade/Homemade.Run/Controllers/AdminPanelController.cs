@@ -1,12 +1,16 @@
-﻿
-namespace Homemade.Run.Controllers
+﻿namespace Homemade.Run.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
+    using System.Collections.Generic;
+    using Homemade.Models.EntityModels;
+    using Services.Models;
 
     //[Authorize(Roles = "Admin")]
-    [Authorize]
     public class AdminPanelController : Controller
     {
+        private OrdersService _ordersService = new OrdersService();
+
         public ActionResult Index()
         {
             return View();
@@ -17,34 +21,32 @@ namespace Homemade.Run.Controllers
             return RedirectToAction("AddProduct", "Products");
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public ActionResult CheckNewOrders()
-        {
+        //Both below can use the same view
 
-            return this.View();
+        public ActionResult ConfirmedOrders()
+        {
+            List<Order> confirmedOrders = this._ordersService.GetConfirmed().ToList();
+
+            return this.View(confirmedOrders);
         }
 
-        [HttpGet]
-        public ActionResult CheckSentOrders()
+        public ActionResult NonConfirmedOrders()
         {
+            List<Order> nonConfirmedOrders = this._ordersService.GetNonConfirmed().ToList();
 
-            return this.View();
+            return this.View(nonConfirmedOrders);
         }
 
         [HttpPost]
         public ActionResult IsShipped(int orderId)
         {
-
             return this.RedirectToAction("CheckNewOrders");
         }
 
         [HttpPost]
         public ActionResult IsNotShipped(int orderId)
         {
-            
-
-            return this.View("CheckSentOrders");
+            return this.RedirectToAction("CheckSentOrders");
         }
     }
 }

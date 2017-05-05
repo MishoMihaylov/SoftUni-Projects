@@ -6,7 +6,7 @@
 
     public interface IRepository<T> where T: class
     {
-        void AddOrUpdate(T newEntity);
+        void AddOrUpdate(T entity);
 
         bool Contains(T entity);
 

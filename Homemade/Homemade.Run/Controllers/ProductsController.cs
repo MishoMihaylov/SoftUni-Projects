@@ -18,33 +18,33 @@
             List<Product> allProducts = new List<Product>();
             if (categoryId == -1)
             {
-                allProducts = this._productsService.GetAll().OrderBy(product => product.Date).ToList();
+                //allProducts = this._productsService.GetAll().OrderBy(product => product.Date).ToList();
             }
             else
             {
-                allProducts = this._productsService.GetByCategoryId(categoryId).OrderBy(product => product.Date).ToList();
+                //allProducts = this._productsService.GetByCategoryId(categoryId).OrderBy(product => product.Date).ToList();
             }
 
             return View(allProducts);
         }
 
-        [Authorize]
+        //[Authorize]
         public ActionResult AddProduct()
         {
-            List<Category> categories = this._categoryService.GetAll().ToList();
+            //List<Category> categories = this._categoryService.GetAll().ToList();
 
             List<SelectListItem> categoriesListItems = new List<SelectListItem>();
 
-            foreach (var category in categories)
-            {
-                SelectListItem item = new SelectListItem()
-                {
-                    Text = category.Name,
-                    Value = category.Id.ToString()
-                };
+            //foreach (var category in categories)
+            //{
+            //    SelectListItem item = new SelectListItem()
+            //    {
+            //        Text = category.Name,
+            //        Value = category.Id.ToString()
+            //    };
 
-                categoriesListItems.Add(item);
-            }
+            //    categoriesListItems.Add(item);
+            //}
 
             ViewBag.Categories = categoriesListItems;
 
