@@ -1,10 +1,18 @@
 ﻿namespace Homemade.Models.EntityModels
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Product
     {
+        public Product()
+        {
+            this.InOrders = new HashSet<OrderProduct>();
+            this.CartProducts = new HashSet<CartProduct>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -13,16 +21,19 @@
 
         public int CategoryId { get; set; }
 
-        [Required]
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
         public DateTime Date { get; set; }
 
+        public string Description { get; set; }
+
         [Range(0, 50000, ErrorMessage = "Price cannot be negative or more than 50000")]
         public decimal Price { get; set; }
 
-        [Range(0, 10000, ErrorMessage = "Quantity cannot be negative or more than 10000")]
-        public int Quantity { get; set; }
+        public virtual ICollection<OrderProduct> InOrders { get; set; }
+
+        public virtual ICollection<CartProduct> CartProducts { get; set; }
 
         //public string ImagePath { get; set; }
     }

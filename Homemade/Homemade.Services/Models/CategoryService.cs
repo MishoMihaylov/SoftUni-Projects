@@ -6,48 +6,50 @@
     using Data.Contracts;
     using Homemade.Models.EntityModels;
 
-    public class CategoryService : BaseService<Category>, ICategoryService
+    public class CategoryService : BaseService, ICategoryService
     {
-        public CategoryService(IRepository<Category> repository = null) : base(repository)
+        public CategoryService(IUnitOfWork unitOfWork = null) : base(unitOfWork)
         {
         }
 
         public void AddOrUpdate(Category category)
         {
-            this.Repository.AddOrUpdate(category);
+            this.UnitOfWork.Categories.AddOrUpdate(category);
+            this.UnitOfWork.Commit();
         }
 
         public Category GetById(int id)
         {
-            Category category = this.Repository.FindBy(p => p.Id == id).Single();
+            Category category = this.UnitOfWork.Categories.FindBy(p => p.Id == id).Single();
 
             return category;
         }
 
         public Category GetByName(string name)
         {
-            Category category = this.Repository.FindBy(c => c.Name == name).Single();
+            Category category = this.UnitOfWork.Categories.FindBy(c => c.Name == name).Single();
 
             return category;
         }
 
         public ICollection<Category> GetAll()
         {
-            ICollection<Category> allCategories = this.Repository.GetAll().ToList();
+            ICollection<Category> allCategories = this.UnitOfWork.Categories.GetAll().ToList();
 
             return allCategories;
         }
 
         public ICollection<string> GetAllTitles()
         {
-            ICollection<string> allCategoryTitles = this.Repository.GetAll().Select(cat => cat.Name).ToList();
+            ICollection<string> allCategoryTitles = this.UnitOfWork.Categories.GetAll().Select(cat => cat.Name).ToList();
 
             return allCategoryTitles;
         }
 
         public void Remove(Category category)
         {
-            this.Repository.Delete(category);
+            this.UnitOfWork.Categories.Delete(category);
+            this.UnitOfWork.Commit();
         }
     }
 }

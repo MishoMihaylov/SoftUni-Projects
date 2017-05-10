@@ -5,13 +5,22 @@
 <h4>Admin Panel</h4>
 <hr />
 <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" class="btn btn-default" value="Check New Orders" />
+    <div class="col-md-offset-1 col-md-10">
+        <a href="@Url.Action("AddProduct", "Products")" class="btn btn-primary btn-default">Add New Product</a>
     </div>
 </div>
+<br />
 <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" class="btn btn-default" value="Check Sent Orders" />
+    <div class="col-md-offset-1 col-md-10">
+        <a href="@Url.Action("NonConfirmedOrders", "AdminPanel")" class="btn btn-success btn-default">Check New Orders</a>
     </div>
 </div>
+<br />
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-10">
+        <a href="@Url.Action("ConfirmedOrders", "AdminPanel")" class="btn btn-success btn-default">Check Sent Orders</a>
+    </div>
+</div>
+<br />
+
 

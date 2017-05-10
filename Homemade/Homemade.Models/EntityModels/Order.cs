@@ -2,12 +2,17 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Order
     {
-        public Guid Id { get; set; }
+        public Order()
+        {
+            this.OrderedProducts = new HashSet<OrderProduct>();
+        }
 
-        public bool Ordered { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         public string Buyer { get; set; }
 
@@ -17,6 +22,6 @@
 
         public string ShippingAddress { get; set; }
         
-        public virtual ICollection<Product> OrderedProducts { get; set; }
+        public virtual ICollection<OrderProduct> OrderedProducts { get; set; }
     }
 }

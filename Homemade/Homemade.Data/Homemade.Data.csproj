@@ -58,9 +58,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IHomemadeDbContext.cs" />
-    <Compile Include="HomemadeDbContext.cs" />
+    <Compile Include="Contracts\IUnitOfWork.cs" />
+    <Compile Include="Contracts\IUserRepository.cs" />
+    <Compile Include="Enums\UserRoles.cs" />
+    <Compile Include="Models\HomemadeDbContext.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\UnitOfWork.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

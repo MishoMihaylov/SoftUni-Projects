@@ -1,14 +1,64 @@
-﻿@model Homemade.Models.EntityModels.ShoppingCart
+﻿@model Homemade.Models.ViewModels.ShoppingCartVM
 
 @{
     ViewBag.Title = "Shopping Cart";
 }
 
-@if(Model.Items.Count > 0)
-{
+<br />
 
+@if (Model.CartItems.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.CartItems)
+            {
+                <tr>
+                    <td>
+                        @product.Name
+                    </td>
+                    <td>
+                        @product.Quantity
+                    </td>
+                    <td>
+                        @(product.Price * product.Quantity) $
+                    </td>
+                    <td>
+                        <button class="btn btn-success" onclick="addItem(@product.Name)">
+                            Add
+                        </button>
+                        <button class="btn btn-danger" value="@product.Name" onclick="@Url.Action("Remove", "Products")">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total: @Model.TotalPrice $</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <a class="btn btn-primary" href="@Url.Action("Order", "ShoppingCart")">Order</a>
 }
 else
 {
-    <h4>No Items in the Cart.</h4>
+    if (this.ViewBag.Message != null)
+    {
+        <h4>@this.ViewBag.Message</h4>
+    }
+    else
+    {
+        <h4>No Items in the Cart.</h4>
+    }
 }

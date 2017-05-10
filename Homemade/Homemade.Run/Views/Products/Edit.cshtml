@@ -6,9 +6,10 @@
 
 @using (Html.BeginForm())
 {
-    <h4>Create a new product.</h4>
+    <h4>Edit Product. </h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -34,16 +35,16 @@
         </div>
     </div>
     @*<div class="form-group">
-        @Html.LabelFor(m => m.Image, new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" id="Image" name="file" />
-        </div>
-    </div>*@
+            @Html.LabelFor(m => m.Image, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="Image" name="file" />
+            </div>
+        </div>*@
     <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Create New Product" />
+            <input type="submit" class="btn btn-default" value="Edit Product" />
         </div>
     </div>
 }
-<br/>
+<br />

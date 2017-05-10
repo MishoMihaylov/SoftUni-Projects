@@ -6,11 +6,9 @@
     using System.Data.Entity.Migrations;
     using Contracts;
 
-    //Reminder: Be sure you want the contains check in delete
-
     public class Repository<T>: IRepository<T> where T: class
     {
-        private HomemadeDbContext _context;
+        protected readonly HomemadeDbContext _context;
 
         public Repository(HomemadeDbContext context = null)
         {
@@ -20,7 +18,6 @@
         public void AddOrUpdate(T newEntity)
         {
             this._context.Set<T>().AddOrUpdate(newEntity);
-            this._context.SaveChanges();
         }
 
         public bool Contains(T entity)
@@ -50,13 +47,11 @@
             T entity = FindById(id);
 
             this._context.Set<T>().Remove(entity);
-            this._context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
             this._context.Set<T>().Remove(entity);
-            this._context.SaveChanges();
         }
     }
 }

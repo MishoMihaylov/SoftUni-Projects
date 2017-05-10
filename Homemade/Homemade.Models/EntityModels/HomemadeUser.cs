@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class HomemadeUser : IdentityUser
     {
@@ -14,6 +15,6 @@
             return userIdentity;
         }
 
-        public ShoppingCart ShoppingCart { get; set; }
+        public virtual ShoppingCart ShoppingCart { get; set; }
     }
 }

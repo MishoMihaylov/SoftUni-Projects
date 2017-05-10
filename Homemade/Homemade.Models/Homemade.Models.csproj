@@ -58,15 +58,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingModels\AddressBM.cs" />
+    <Compile Include="BindingModels\OrderBM.cs" />
     <Compile Include="BindingModels\ProductBM.cs" />
     <Compile Include="EntityModels\CartProduct.cs" />
     <Compile Include="EntityModels\Order.cs" />
+    <Compile Include="EntityModels\OrderProduct.cs" />
     <Compile Include="EntityModels\Product.cs" />
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\ShoppingCart.cs" />
     <Compile Include="EntityModels\HomemadeUser.cs" />
     <Compile Include="EntityModels\Address.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CartProductVM.cs" />
+    <Compile Include="ViewModels\CategoryVM.cs" />
+    <Compile Include="ViewModels\OrderVM.cs" />
+    <Compile Include="ViewModels\ProductVM.cs" />
+    <Compile Include="ViewModels\ShoppingCartVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

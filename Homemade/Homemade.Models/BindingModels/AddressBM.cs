@@ -4,15 +4,15 @@
 
     public class AddressBM
     {
-        [Required]
-        public string Address { get; set; }
+        [Display(Name = "Shipping Address")]
+        [StringLength(50, MinimumLength = 3)]
+        [Required(ErrorMessage = "Invalid address.")]
+        public string ShippingAddress { get; set; }
 
-        [Required]
+        [StringLength(20, MinimumLength = 3)]
+        [Required(ErrorMessage = "Invalid town.")]
         public string Town { get; set; }
 
-        [Required]
-        public int ZIP { get; set; }
-
-        public string Comments { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -3,20 +3,20 @@
     using Data.Models;
     using Data.Contracts;
 
-    public abstract class BaseService<T> where T: class
+    public abstract class BaseService
     {
-        private IRepository<T> _repository; 
+        private IUnitOfWork _unitOfWork;
 
-        public BaseService(IRepository<T> repository = null)
+        public BaseService(IUnitOfWork unitOfWork = null)
         {
-            this._repository = repository ?? new Repository<T>();
+            this._unitOfWork = unitOfWork ?? new UnitOfWork();
         }
 
-        protected IRepository<T> Repository
+        protected IUnitOfWork UnitOfWork
         {
             get
             {
-                return this._repository;
+                return this._unitOfWork;
             }
         }
     }
